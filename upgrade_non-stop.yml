@@ -64,7 +64,7 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
           component_type: "MP"
-          parallel: True
+          parallel: False
           pause_on_error: True
           pause_after_each_group: True
 
@@ -89,7 +89,6 @@
           upgrade_units: "{{upgrade_units.response.results}}"
           esx_list:
             - "esx-03a"
-
 
     - name: Create Upgrade Units Group 2
       upgrade_create_upgrade_units_groups:
@@ -173,7 +172,7 @@
          username: "{{username}}"
          password: "{{password}}"
          validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+         component_type: "EDGE"
 
 
 #  #############  Upgrade MP Phase #############
@@ -191,7 +190,7 @@
          username: "{{username}}"
          password: "{{password}}"
          validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+         component_type: "MP"
 
 
 #  ###########  Upgrade Finalization Phase ############
@@ -209,7 +208,7 @@
          username: "{{username}}"
          password: "{{password}}"
          validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+         component_type: "MP"
 
 
 #  #############  Run Post-check #############
