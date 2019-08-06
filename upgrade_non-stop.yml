@@ -214,7 +214,7 @@
 #  #############  Run Post-check #############
 
    - name: Run Post-check
-     run_post_check:
+     upgrade_run_post_check:
           hostname: "{{hostname}}"
           username: "{{username}}"
           password: "{{password}}"
