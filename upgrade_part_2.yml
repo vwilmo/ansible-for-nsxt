@@ -57,7 +57,7 @@
          username: "{{username}}"
          password: "{{password}}"
          validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+         component_type: "MP"
 
 
 #  ###########  Upgrade Finalization Phase ############
