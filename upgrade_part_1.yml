@@ -130,10 +130,10 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: "{{validate_certs}}"
+          component_type: "HOST"

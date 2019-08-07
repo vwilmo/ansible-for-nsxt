@@ -130,13 +130,13 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: "{{validate_certs}}"
+          component_type: "HOST"
 
 
 #  #############  Upgrade Host Unite Group 2 #############
@@ -148,13 +148,13 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "HOST"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: "{{validate_certs}}"
+          component_type: "HOST"
 
 
 #  #############  Upgrade Edge Pahse #############
@@ -166,13 +166,13 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "EDGE"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: "{{validate_certs}}"
+          component_type: "EDGE"
 
 
 #  #############  Upgrade MP Phase #############
@@ -184,13 +184,13 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "MP"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          validate_certs: "{{validate_certs}}"
+          component_type: "MP"
 
 
 #  ###########  Upgrade Finalization Phase ############
@@ -202,21 +202,21 @@
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
 
-   - name: Upgrade Status
-     upgrade_status:
-         hostname: "{{hostname}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         validate_certs: "{{validate_certs}}"
-         component_type: "MP"
-
-
-#  #############  Run Post-check #############
-
-   - name: Run Post-check
-     upgrade_run_post_check:
-          hostname: "{{hostname}}"
+    - name: Upgrade Status
+      upgrade_status:
+          hostname: "{{upgrade_ip_address}}"
           username: "{{username}}"
           password: "{{password}}"
           validate_certs: "{{validate_certs}}"
           component_type: "MP"
+
+
+#  #############  Run Post-check #############
+
+    - name: Run Post-check
+      upgrade_run_post_check:
+            hostname: "{{upgrade_ip_address}}"
+            username: "{{username}}"
+            password: "{{password}}"
+            validate_certs: "{{validate_certs}}"
+            component_type: "MP"
