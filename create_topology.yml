@@ -230,30 +230,4 @@
       with_items:
         - "{{transport_nodes}}"
 
-    - name: Create transport node profile
-      nsxt_transport_node_profiles:
-        hostname: "{{hostname}}"
-        username: "{{username}}"
-        password: "{{password}}"
-        validate_certs: False
-        resource_type: TransportNodeProfile
-        display_name: "{{item.display_name}}"
-        description: NSX configured Test Transport Node Profile
-        host_switch_spec:
-          resource_type: StandardHostSwitchSpec
-          host_switches:
-          - host_switch_profiles:
-            - name: "{{item.uplink_profile_name}}"
-              type: UplinkHostSwitchProfile                             
-            - name: "{{item.lldp_profile_name}}"
-              type: LldpHostSwitchProfile                             
-            host_switch_name: "{{item.host_switch_name}}"
-            pnics:
-            - device_name: "{{item.device_name}}"
-              uplink_name: "{{item.uplink_name}}"
-        transport_zone_endpoints:
-        - transport_zone_name: "{{item.transport_zone_name}}"
-        state: present
-      with_items:
-        - "{{transport_node_profiles}}"
 
