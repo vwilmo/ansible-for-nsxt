@@ -149,11 +149,3 @@ transport_nodes:
   # thumbprint: "2742B493AA40E285D96F6452733333A988DE0AD335593EB9AF4AFB0A95812E57"
   thumbprint: ""
 
-transport_node_profiles:
-- display_name: "test-transport-node-profile-1"
-  uplink_profile_name: "{{uplink_profile_name_1}}"
-  lldp_profile_name: "{{lldp_profile_name_1}}"
-  host_switch_name: "{{host_switch_name_1}}"
-  device_name: "{{device_name_1}}"
-  uplink_name: "{{uplink_name_1}}"
-  transport_zone_name: "{{transport_zone_name_1}}"
