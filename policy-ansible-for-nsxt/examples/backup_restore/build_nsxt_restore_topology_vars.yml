@@ -1,0 +1,70 @@
+# Copyright 2018 VMware, Inc.
+# SPDX-License-Identifier: BSD-2-Clause OR GPL-3.0-only
+#
+# Variables file to deploy a simple topology
+
+{
+    "nsx_manager" : "192.168.0.107",
+    "nsx_username": "admin",
+    "nsx_password": "VMware1!VMware1!",
+    "validate_certs": "false",
+
+    "state": "present",
+
+    "tier1_gateways": [
+      {
+        "display_name": "T1-RESTORE",
+        "tier0_display_name": "T1-RESTORE",
+        "tags": [
+          {
+            "tag": "ansible",
+            "scope": "RESTORE"
+          }
+        ]
+      }
+    ],
+
+    "segments": [
+        {
+            "display_name": "BACKUP_SEGMENT",
+            "tier1_display_name": "T1-RESTORE",
+            "tz": "TZ_OVERLAY_01a",
+            "domain_name": "corp.local",
+            "subnets": [
+                {
+                  "gateway_address": "1.1.1.1/24"
+                }
+            ],
+            "tags": [
+                {
+                  "tag": "ansible",
+                  "scope": "RESTORE"
+                }
+          ]
+        }
+    ],
+                     
+
+# Note: 'group' is a reserved key. Cant use it here.
+    "mygroups": [
+        {
+            "display_name": "RESTORED_NSXT_MANAGER",
+            "domain_id": "default",
+            "expression": [
+                {
+                    "member_type": "VirtualMachine",
+                    "value": "web",
+                    "key": "Tag",
+                    "operator": "EQUALS",
+                    "resource_type": "Condition"
+                }
+            ],
+            "tags": [
+                {
+                  "tag": "ansible",
+                  "scope": "RESTORE"
+                }
+            ]
+        }   
+    ]
+}
